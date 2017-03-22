@@ -1,0 +1,55 @@
+<div class="container" style='border: 0px solid red;'>
+
+    <h2 class="form-signin-heading">{{ title }}</h2>
+    <label>County<input type="input" id="County" name='County' class="form-control" value="{{ County }}" disabled ></label>
+    <label>Superintendent
+    <input type="input" id="Super_Name" name='Super_Name' class="form-control" value="{{ Super_Name }}" disabled></label>
+    <label>Election Name 
+    <input type="input" id="Elec_Name" name='Elec_Name' class="form-control" value="{{ Elec_Name }}" disabled>
+    </label>
+    <label>Election Date
+    <input type="input" id="Elect_date" name='Elect_date' class="form-control" value="{{ Elec_date }}" disabled ></label>
+    <label>
+    <input type="input" id="reportSel" name='reportSel' class="form-control" value="{{ reportSel }}" disabled >
+    </label>
+
+    <hr />
+
+    <div style="float:left; position: relative; width: 50%; border: 0px solid red;">
+        <table class="table table-condensed" style='font-size: 12px; font-weight: bold;'>
+            <thead>
+              <tr style='background-color: #1C89D1; color: #fff'><td colspan='3'><h4>Listing by Town Names</h4></td></tr>
+              <tr>
+                <th>Town Name</th>
+                <th>Counts</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                {{#each rowData }}
+                    <tr>
+                        <td id="twn{{@index}}">{{this.muni}}</td>
+                        <td align='right'>{{ this.total }}</td>
+                        <td><a href='#-{{@root.rowLength}}-{{@index}}' id='{{this.muni}}'>View List</a></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+    </div> 
+
+    <div style="float:left; position: relative; width: 50%; border: 0px solid red;">
+        <table class="table table-condensed" style='font-size: 12px; font-weight: bold; margin-top: -1px;'>
+            <tr style='background-color: #1C89D1; color: #fff'><td colspan='3'><h4>&nbsp;</h4></td>            
+            <tr><td colspan='3' id="townDetails">&nbsp;</td></tr>
+        </table>
+    </div>
+
+</div>
+<div class ='row' >
+    <div class="container">
+      <div style="margin: 0 auto; text-align: center;">
+        <button class="btn btn-md btn-primary btn-block " type="button" onclick="window.location.href='/appPage'">Return to Home Page</button>        
+      </div>
+    </div>
+</div>       

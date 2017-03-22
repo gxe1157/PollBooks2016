@@ -1,0 +1,48 @@
+<style>
+label{
+	width: 100%;
+
+}
+</style>
+<div class="container">
+	<h2 class="form-signin-heading">{{ title }}</h2>
+	<form class="form-signin"
+			id="uploadForm"
+	        enctype="multipart/form-data"
+	        action="/upload"
+	        method="post">
+	        
+			<div class="row">
+			  <div class="col-md-2">
+			  		<label><input type="input" id="County" name='County' class="form-control input-sm"  placeholder="Enter County Name" required autofocus></label>
+			  </div>
+			  <div class="col-md-2">
+				<label><input type="input" id="Super_Name" name='Super_Name' class="form-control input-sm" placeholder="Enter Superintendent name" required autofocus></label>
+			  </div>
+			  <div class="col-md-2">
+				<label><input type="input" id="Elec_Name" name='Elec_Name' class="form-control input-sm" placeholder="Enter Election Name" required autofocus></label>
+			  </div>
+			  <div class="col-md-2">	  
+				<label><input type="input" id="Elec_date" name='Elec_date' class="form-control input-sm" placeholder="Enter Election Date" required autofocus></label>
+			  </div>
+
+
+			  <div class="col-md-4">	  
+			    <label><select id="reportSel" name="reportSel" class="selectpicker form-control" >
+			          <option>Poll Books</option>
+			          <option>Poll Sheets</option>
+			        </select>
+			    </label>			  
+			  </div>	  	
+
+
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<input type="file" name="csvFile" class="form-control" required autofocus/>
+					<button class="btn btn-md btn-primary btn-block " type="submit">Import File</button>
+					<button class="btn btn-md btn-primary btn-block " type="button" onclick="window.location.href='/logout'">Quit</button>			
+				</div>	
+			</div>
+	</form>
+</div>
